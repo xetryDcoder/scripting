@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Emoji with Hover Effect</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f1f1f1;
+    }
+    .emoji {
+      font-size: 100px;
+      transition: transform 0.5s;
+    }
+    .emoji:hover {
+      transform: scale(1.5);
+    }
+  </style>
+</head>
+<body>
+  <div class="emoji">😀</div>
+  <script>
+    const emoji = document.querySelector('.emoji');
+    const emojis = ['😀', '😊', '😂', '😍', '🤔', '😴'];
+    emoji.addEventListener('mouseover', () => {
+      const index = Math.floor(Math.random() * emojis.length);
+      emoji.textContent = emojis[index];
+    });
+    emoji.addEventListener('mouseleave', () => {
+      emoji.textContent = '😀';
+    });
+  </script>
+</body>
+</html>

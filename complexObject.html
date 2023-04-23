@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Person Info</title>
+    <script type="text/javascript">
+      const person = {
+        name: {
+          first: "John",
+          last: "Doe"
+        },
+        age: 32,
+        education: [
+          {
+            school: "Harvard University",
+            year: 2010
+          },
+          {
+            school: "Stanford University",
+            year: 2014
+          }
+        ],
+        job: {
+          title: "Software Engineer",
+          company: "Google",
+          salary: 120000,
+          responsibilities: [
+            "Write code",
+            "Test code",
+            "Debug code"
+          ]
+        }
+      };
+
+      window.onload = function() {
+        document.getElementById('first-name').textContent = person.name.first;
+        document.getElementById('last-name').textContent = person.name.last;
+        document.getElementById('age').textContent = person.age;
+
+        document.getElementById('school1').textContent = person.education[0].school;
+        document.getElementById('year1').textContent = person.education[0].year;
+        document.getElementById('school2').textContent = person.education[1].school;
+        document.getElementById('year2').textContent = person.education[1].year;
+
+        document.getElementById('title').textContent = person.job.title;
+        document.getElementById('company').textContent = person.job.company;
+        document.getElementById('salary').textContent = `RS. ${person.job.salary}/year`;
+
+        const responsibilities = person.job.responsibilities;
+        const responsibilitiesList = document.getElementById('responsibilities');
+        for (let i = 0; i < responsibilities.length; i++) {
+          const listItem = document.createElement('li');
+          listItem.textContent = responsibilities[i];
+          responsibilitiesList.appendChild(listItem);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Person Information</h1>
+    <p><strong>First Name:</strong> <span id="first-name"></span></p>
+    <p><strong>Last Name:</strong> <span id="last-name"></span></p>
+    <p><strong>Age:</strong> <span id="age"></span></p>
+
+    <h2>Education</h2>
+    <ul>
+      <li><strong>School:</strong> <span id="school1"></span>, <strong>Year:</strong> <span id="year1"></span></li>
+      <li><strong>School:</strong> <span id="school2"></span>, <strong>Year:</strong> <span id="year2"></span></li>
+    </ul>
+
+    <h2>Job</h2>
+    <p><strong>Title:</strong> <span id="title"></span></p>
+    <p><strong>Company:</strong> <span id="company"></span></p>
+    <p><strong>Salary:</strong> <span id="salary"></span></p>
+    <h3>Responsibilities:</h3>
+    <ul id="responsibilities"></ul>
+  </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AOS.js and Chart.js Example</title>
+    <!-- Import AOS.js CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <!-- Import Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Bootstrap card with AOS.js animation -->
+    <div class="container my-5">
+      <div class="card" data-aos="fade-up">
+        <div class="card-header">
+          Example Card
+        </div>
+        <div class="card-body">
+          This is an example card with AOS.js animation.
+        </div>
+      </div>
+    </div>
+
+    <h1 data-aos="fade-up">AOS.js and Chart.js Example</h1>
+
+    <div class="chart-container" data-aos="fade-up">
+      <canvas id="myChart"></canvas>
+    </div>
+
+    <!-- Import AOS.js and Chart.js scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+
+    <script>
+      // Initialize AOS.js library
+      AOS.init();
+
+      // Define data for the chart
+      const data = {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        datasets: [{
+          label: 'Sales',
+          data: [12, 19, 3, 5, 2, 3, 9],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)',
+            'rgba(255, 99, 132, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)',
+            'rgba(255, 99, 132, 1)'
+          ],
+          borderWidth: 1
+        }]
+      };
+
+      // Define options for the chart
+      const options = {
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
+            }
+          }]
+        }
+      };
+
+      // Create a new Chart.js chart
+      const myChart = new Chart(document.getElementById('myChart'), {
+        type: 'bar',
+        data: data,
+        options: options
+      });
+    </script>
+  </body>
+</html>

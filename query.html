@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Selector Example</title>
+</head>
+<body>
+  <div id="myDiv">Hello, World!</div>
+  <p class="myClass">This is a paragraph.</p>
+  <ul>
+    <li>Item 1</li>
+    <li class="selected">Item 2</li>
+    <li>Item 3</li>
+  </ul>
+  <a href="https://www.example.com">Visit Example</a>
+
+  <script>
+    
+    // getElementById
+    var myDiv = document.getElementById('myDiv')
+    console.log(myDiv); // Output: <div id="myDiv">Hello, World!</div>
+
+    // getElementsByClassName
+    var myClassElements = document.getElementsByClassName('myClass')
+    console.log(myClassElements); // Output: HTMLCollection [p.myClass]
+
+    // getElementsByTagName
+    var listItems = document.getElementsByTagName('li');
+    console.log(listItems); // Output: HTMLCollection [li, li.selected, li]
+
+    // querySelector
+    var link = document.querySelector('.myClass');
+    console.log(link); // Output: <a href="https://www.example.com">Visit Example</a>
+
+    // querySelectorAll
+    var selectedItems = document.querySelectorAll('.selected');
+    console.log(selectedItems); // Output: NodeList [li.selected]
+  </script>
+</body>
+</html>

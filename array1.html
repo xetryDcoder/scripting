@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Array Higher-Order Functions</title>
+  </head>
+  <body>
+    <h1>Array Higher-Order Functions Example</h1>
+    <p>Open the browser console to view the results.</p>
+
+    <script>
+      // Define an array of numbers
+      const numbers = [1, 2, 3, 4, 5];
+
+      // Map function: double each number in the array
+      const doubledNumbers = numbers.map(number => number * 2);
+      console.log(doubledNumbers); // Output: [2, 4, 6, 8, 10]
+
+      // Filter function: get all even numbers from the array
+      const evenNumbers = numbers.filter(number => number % 2 === 0);
+      console.log(evenNumbers); // Output: [2, 4]
+
+      // Reduce function: calculate the sum of all numbers in the array
+      const sum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue);
+      console.log(sum); // Output: 15
+
+      // forEach function: log each number in the array to the console
+      numbers.forEach(number => console.log(number));
+      // Output:
+      // 1
+      // 2
+      // 3
+      // 4
+      // 5
+
+      // Some function: check if at least one number in the array is even
+      const hasEvenNumber = numbers.some(number => number % 2 === 0);
+      console.log(hasEvenNumber); // Output: true
+
+      // Every function: check if all numbers in the array are even
+      const areAllNumbersEven = numbers.every(number => number % 2 === 0);
+      console.log(areAllNumbersEven); // Output: false
+    </script>
+  </body>
+</html>

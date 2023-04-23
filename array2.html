@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Array Methods Example</title>
+  </head>
+  <body>
+    <h1>Array Methods Example</h1>
+    <p>Open the browser console to view the results.</p>
+    <span>Hello there!</span>
+    <b>hELLOO AGAIN </b>
+    <script>
+      // Define an array of numbers
+      const numbers = [1, 2, 3, 4, 5];
+
+      // Map function: double each number in the array
+      const doubledNumbers = numbers.map(number => number * 2);
+      console.log(doubledNumbers); // Output: [2, 4, 6, 8, 10]
+
+      // Filter function: get all even numbers from the array
+      const evenNumbers = numbers.filter(number => number % 2 === 0);
+      console.log(evenNumbers); // Output: [2, 4]
+
+      // Reduce function: calculate the sum of all numbers in the array
+      const sum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue);
+      console.log(sum); // Output: 15
+
+      // forEach function: log each number in the array to the console
+      numbers.forEach(number => console.log(number));
+      // Output:
+      // 1
+      // 2
+      // 3
+      // 4
+      // 5
+
+      // Some function: check if at least one number in the array is even
+      const hasEvenNumber = numbers.some(number => number % 2 === 0);
+      console.log(hasEvenNumber); // Output: true
+
+      // Every function: check if all numbers in the array are even
+      const areAllNumbersEven = numbers.every(number => number % 2 === 0);
+      console.log(areAllNumbersEven); // Output: false
+
+      // Splice function: remove the second and third elements from the array
+      let newNumber = [1,2,3,4,5];
+      // const removedNumbers = newNumber.splice(1, 2);
+      // console.log("Splice")
+      // console.log(newNumber); // Output: [1, 4, 5]
+      // console.log(removedNumbers); // Output: [2, 3]
+      // console.log(newNumber)
+
+      // Slice function: get a new array with the second and third elements from the original array
+      
+      const slicedNumbers = newNumber.slice(1, 3);
+      console.log("Sliced NUmber")
+      console.log(slicedNumbers); // Output: [4, 5]
+      console.log("all Number")
+      console.log(newNumber)
+
+      const name = ['hemanta', 'MUnal', "Basatnta"]
+      const splicedName = name.splice(0,1)
+      console.log("Slice Data")
+      console.log(name);
+      console.log(splicedName)
+
+      // Push function: add a new element to the end of the array
+      numbers.push(6);
+      console.log(numbers); // Output: [1, 4, 5, 6]
+
+      // Pop function: remove the last element from the array
+      const lastNumber = numbers.pop();
+      console.log(numbers); // Output: [1, 4, 5]
+      console.log(lastNumber); // Output: 6
+
+      // Shift function: remove the first element from the array
+      const firstNumber = numbers.shift();
+      console.log(numbers); // Output: [4, 5]
+      console.log(firstNumber); // Output: 1
+
+      // Unshift function: add a new element to the beginning of the array
+      numbers.unshift(0);
+      console.log(numbers); // Output: [0, 4, 5]
+    </script>
+  </body>
+</html>

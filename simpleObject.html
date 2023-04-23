@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Display Object in HTML</title>
+  </head>
+  <body>
+    <h1>Person Details</h1>
+    <ul>
+      <li>Name: <span id="name"></span></li>
+      <li>Age: <span id="age"></span></li>
+      <li>City: <span id="city"></span></li>
+      <li>Hobbies: <span id="hobbies"></span></li>
+      <li>Job Title: <span id="job-title"></span></li>
+      <li>Company: <span id="company"></span></li>
+    </ul>
+
+    <script>
+      // Get the person object
+      const person = {
+        name: 'John',
+        age: 30,
+        city: 'New York',
+        hobbies: ['reading', 'running', 'traveling'],
+        job: {
+          title: 'Software Engineer',
+          company: 'ABC Corp'
+        }
+      };
+
+      // Update the HTML elements with the person data
+      document.getElementById('name').textContent = person.name;
+      document.getElementById('age').textContent = person.age;
+      document.getElementById('city').textContent = person.city;
+      document.getElementById('hobbies').textContent = person.hobbies.join(', ');
+      document.getElementById('job-title').textContent = person.job.title;
+      document.getElementById('company').textContent = person.job.company;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="number-input">Number:</label>
+        <!-- <input type="text" id="number-input" name="number" pattern="[0-9]+" required> -->
+        <input type="text" id="number-input" name="number" required>
+
+        
+        <label for="email-input">Email:</label>
+        <input type="text" id="email-input" name="email"  required>
+        
+        <label for="phone-input">Phone Number (7-10 digits):</label>
+        <input type="tel" id="phone-input" name="phone"  required>
+        
+        <label for="text-input">Text:</label>
+        <input type="text" id="text-input" name="text"  required>
+        
+        <button type="submit">Submit</button>
+      </form>
+      
+      <script>
+        // get the form element
+        const form = document.querySelector('form');
+      
+        // add an event listener for the form submit event
+        form.addEventListener('submit', (event) => {
+      
+          // validate the number input
+          const numberInput = document.getElementById('number-input');
+          const numberRegex = /^[0-9]+$/;
+          if (!numberRegex.test(numberInput.value)) {
+            alert('Invalid number input!');
+            event.preventDefault();
+            return;
+          }
+      
+          // validate the email input
+          const emailInput = document.getElementById('email-input');
+          const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+          if (!emailRegex.test(emailInput.value)) {
+            alert('Invalid email input!');
+            event.preventDefault();
+            return;
+          }
+      
+          // validate the phone number input
+          const phoneInput = document.getElementById('phone-input');
+          const phoneRegex = /^[0-9]{7,10}$/;
+          if (!phoneRegex.test(phoneInput.value)) {
+            alert('Invalid phone number input!');
+            event.preventDefault();
+            return;
+          }
+      
+          // validate the text input
+          const textInput = document.getElementById('text-input');
+          const textRegex = /^[a-zA-Z\s]*$/;
+          if (!textRegex.test(textInput.value)) {
+            alert('Invalid text input!');
+            event.preventDefault();
+            return;
+          }
+      
+          // if all inputs are valid, submit the form
+          alert('Form submitted successfully!');
+        });
+      </script>
+      
+</body>
+</html>

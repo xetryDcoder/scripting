@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Select Value Example</title>
+</head>
+<body>
+  <select id="mySelect">
+    <option value="option1">Option 1</option>
+    <option value="option2">Option 2</option>
+    <option value="option3">Option 3</option>
+  </select>
+  <button onclick="getSelectedValue()">Get Selected Value</button>
+
+  <script>
+    function getSelectedValue() {
+      // Get the select element by its ID
+      var selectElement = document.getElementById('mySelect');
+
+      // Get the selected option
+      var selectedOption = selectElement.options[selectElement.selectedIndex];
+
+      // Get the value of the selected option
+      var selectedValue = selectedOption.value;
+
+      // Log the selected value
+      alert('Selected Value: ' + selectedValue);
+    }
+  </script>
+</body>
+</html>

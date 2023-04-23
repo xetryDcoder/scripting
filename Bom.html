@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BOM Example</title>
+  </head>
+  <body>
+    <h1>BOM Example</h1>
+
+    <p>Click the button to open a new window:</p>
+    <a href="/array2.html" target="_blank">Click her</a>
+
+    <button onclick="openWindow()">Open Window</button>
+    <button onclick="redirect()">Redirect Window</button>
+
+    <script>
+      // Opening a new window
+      function openWindow() {
+        window.open("https://www.example.com", "_blank", "width=600,height=400");
+      }
+
+      // Getting the current URL
+      let currentUrl = window.location.href;
+      console.log("Current URL:", currentUrl);
+
+      // Getting the screen dimensions
+      let screenWidth = window.screen.width;
+      let screenHeight = window.screen.height;
+      console.log("Screen width:", screenWidth);
+      console.log("Screen height:", screenHeight);
+
+      // Redirecting the user to a different URL
+      function redirect() {
+        window.location.href = "https://www.example.com";
+      }
+    </script>
+  </body>
+</html>

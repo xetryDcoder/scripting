@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Arithmetic Operations</title>
+</head>
+<body>
+	<label for="num1">Enter first number:</label>
+	<input type="number" id="num1">
+
+	<label for="num2">Enter second number:</label>
+	<input type="number" id="num2">
+
+	<label for="operation">Select operation:</label>
+	<select id="operation">
+		<option value="addition">Addition (+)</option>
+		<option value="subtraction">Subtraction (-)</option>
+		<option value="multiplication">Multiplication (*)</option>
+		<option value="division">Division (/)</option>
+	</select>
+
+	<button onclick="performOperation()">Perform Operation</button>
+
+	<p id="result"></p>
+
+	<script>
+		function performOperation() {
+			// Get the values of the input fields
+			var num1 = parseFloat(document.getElementById("num1").value);
+			var num2 = parseFloat(document.getElementById("num2").value);
+
+			// Get the selected operation
+			var operation = document.getElementById("operation").value;
+
+			// Perform the selected operation
+			var result;
+			if (operation === "addition") {
+				result = num1 + num2;
+			} else if (operation === "subtraction") {
+				result = num1 - num2;
+			} else if (operation === "multiplication") {
+				result = num1 * num2;
+			} else if (operation === "division") {
+				result = num1 / num2;
+			}
+
+			// Display the result
+			document.getElementById("result").innerHTML = "The result of the operation is " + result + ".";
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Date Object Example</title>
+  </head>
+  <body>
+    <h1>Date Object Example</h1>
+
+    <p id="current-date"></p>
+
+    <script>
+      // Displaying the current date and time
+      let currentDate = new Date();
+      document.getElementById("current-date").innerHTML = "Current date and time: " + currentDate;
+
+      // Getting the year, month, day, and time from a specific date
+      // let myDate = new Date('2022-05-01T03:30:00');
+      console.log('Year:', currentDate.getFullYear());
+      console.log('Month:', currentDate.getMonth() + 1);
+      console.log('Day:', currentDate.getDate());
+      console.log('Time:', currentDate.toLocaleTimeString());
+
+      // Comparing two dates
+      let date1 = new Date('2022-05-01');
+      let date2 = new Date('2022-06-01');
+
+      if (date1.getTime() > date2.getTime()) {
+        console.log('Date 1 is later than date 2.');
+      } else if (date1.getTime() < date2.getTime()) {
+        console.log('Date 1 is earlier than date 2.');
+      } else {
+        console.log('The two dates are the same.');
+      }
+
+      // Adding a certain number of days to a date
+      let daysToAdd = 7;
+      currentDate.setDate(currentDate.getDate() + daysToAdd);
+      console.log('Date after adding 7 days:', currentDate);
+
+      // Converting a date to a string with a specific format
+      let dateString = currentDate.toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric', hour12: true });
+      console.log('Date string with a specific format:', dateString);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Color Change on Click</title>
+    <script>
+      function changeColor() {
+        var element = document.getElementById("color-change");
+        var colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+        var randomColor = colors[Math.floor(Math.random() * colors.length)];
+        element.style.backgroundColor = randomColor;
+      }
+    </script>
+    <style>
+      #color-change {
+        width: 200px;
+        height: 200px;
+        border: 1px solid black;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="color-change" onclick="changeColor()"></div>
+  </body>
+</html>
